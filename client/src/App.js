@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import AuthServices from './Services/Services'
+import ImageAPI from './components/ImageAPI'
 
 class App extends Component {
 
@@ -61,6 +62,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/login' render={()=>{return <Redirect to="/profile" />}}/>
             <Route exact path='/profile' render={()=><Profile {...this.state.loggedInUser} logout={this.logout}/>}/>
+            <ImageAPI />
           </Switch>
         </React.Fragment>
       );
