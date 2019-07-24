@@ -18,6 +18,13 @@ class App extends Component {
 
   }
 
+  componentDidMount() {
+    this.service.loggedin().then(response => {
+      console.log(response)
+      this.getTheUser(response);
+    })
+  }
+
   getTheUser = (userObj) => {
       this.setState({...this.state,
         loggedInUser: userObj,
