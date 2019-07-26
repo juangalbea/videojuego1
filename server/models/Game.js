@@ -3,12 +3,16 @@ const Schema = mongoose.Schema;
 
 const schemaName = new Schema({
   name: String,
-  Speed: Number,
-  Logic: Number,
+  speed: Number,
+  logic: Number,
   imageID: String,
-  platforms: Array,
-  timestamp: Date,
-  display: { type: Boolean, default: false },
+  platforms: [],
+  display: { type: Boolean, default: false }
+},{
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  }
 });
 
 const Model = mongoose.model('Game', schemaName);

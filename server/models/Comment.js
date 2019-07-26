@@ -3,10 +3,15 @@ const Schema = mongoose.Schema;
 
 const schemaName = new Schema({
   description: String,
-  timestamp: Date,
+  userID: String,
   favourited: { type: Boolean, default: false },
-  done: { type: Boolean, default: false },
-});
+  
+},{
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  }
+  });
 
 const Model = mongoose.model('Comment', schemaName);
 module.exports = Model;

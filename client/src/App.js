@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import {Switch, Route, Redirect} from 'react-router-dom'
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Profile from './components/Profile';
 import AuthServices from './Services/Services'
-import ImageAPI from './components/ImageAPI'
+import ImageAPI from './components/ImageAPI/ImageAPI'
+import Game from './components/Game/Game'
 
 class App extends Component {
 
@@ -28,7 +29,7 @@ class App extends Component {
 
   getTheUser = (userObj) => {
       this.setState({...this.state,
-        loggedInUser: userObj,
+        loggedInUser: userObj
       })
   }
 
@@ -38,31 +39,34 @@ class App extends Component {
     .then(()=>{
       this.setState({
         loggedInUser: null
+      }, () => {
+        this.props.history.push("/login")
       })
     })
   }
 
 
-  fetchUser= () => {
-    this.service.loggedin()
-    .then(response=>{
-      this.setState({
-        loggedInUser: response
-      })
-    })
-  }
+  // fetchUser= () => {
+  //   this.service.loggedin()
+  //   .then(response=>{
+  //     this.setState({
+  //       loggedInUser: response
+  //     })
+  //   })
+  // }
 
 
-
+  
   render(){
     
     if(this.state.loggedInUser){
       return (
         <React.Fragment>
           <Switch>
+          <Route exact path='/game' render={()=><Game   />}/>
+            <Route exact path='/images' render={()=><ImageAPI   />}/>
             <Route exact path='/login' render={()=>{return <Redirect to="/profile" />}}/>
             <Route exact path='/profile' render={()=><Profile {...this.state.loggedInUser} logout={this.logout}/>}/>
-            <ImageAPI />
           </Switch>
         </React.Fragment>
       );
@@ -72,7 +76,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/login' render={()=><Login {...this.state.loggedInUser} getUser={this.getTheUser}/>}/>
             <Route exact path='/signup' render={()=><Signup {...this.state.loggedInUser}/>}/>
-            <Route render={()=>{return <Redirect to="/login" />}}/>
+            
            </Switch>
         </React.Fragment>
       )
@@ -82,4 +86,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);

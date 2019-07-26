@@ -1,0 +1,11 @@
+.platforms h4 {
+  margin: 8px;
+}
+
+.platforms input {
+  width: 70px;
+}
+
+.platforms .colorPlatform {
+  width: 120px;
+}

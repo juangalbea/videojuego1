@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './ImageAPI.css';
 
 class ImageAPI extends Component {
   constructor(props) {
@@ -7,18 +7,18 @@ class ImageAPI extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      hits: []  
     };
   }
 
   componentDidMount() {
-    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=yellow+flowers&image_type=photo`)
+    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=flowers&image_type=photo&&per_page=10      `)
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            hits: result.hits
           });
         },
         // Note: it's important to handle errors here
@@ -34,7 +34,7 @@ class ImageAPI extends Component {
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
+    const { error, isLoaded, hits } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -42,9 +42,10 @@ class ImageAPI extends Component {
     } else {
       return (
         <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              {item.name} {item.price}
+          {hits.map(item => (
+            <li key={item.user}>
+              {/* {item.user} {item.likes} */}
+              <img src={item.previewURL}></img>
             </li>
           ))}
         </ul>
