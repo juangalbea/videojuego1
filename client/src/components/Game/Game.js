@@ -17,7 +17,8 @@ constructor(props) {
                 h: "",
                 color: " "
             }
-        ))
+        )),
+        name: ""
     }
     this.service = new ElementServices();
 }
@@ -38,6 +39,13 @@ rangeValue = (e) => {
     })
 }
 
+handleChangeName = (e) => {
+    this.setState({
+        ...this.state,
+        name: e.target.value
+    })
+   }   
+
 handleChange = (e) => {
     const {id, name, value} = e.currentTarget;
     let newValue = this.state.platforms
@@ -47,8 +55,9 @@ handleChange = (e) => {
 
 handleFormSubmit = (e) => {
     e.preventDefault();
+    const name = this.state.name
     const platforms = this.state.platforms;
-    this.service.game(platforms)
+    this.service.game(platforms, name)
     .then((platforms)=> {
         console.log(platforms)
     })
@@ -74,6 +83,7 @@ render() {
                     </div>
                 })
             }
+            <input type="text" placeholder="Name" onChange={this.handleChangeName} name="gameName"></input>
             {/* Otras cosas:
                     <input type="text" placeholder="Name" name="gameName"></input>
                     <input type="text" placeholder="speed" name="speed"></input>

@@ -12,9 +12,10 @@ router.get('/games', (req, res, next) => {
 });
 
 router.post('/games', (req, res) => {
+  const name = req.body.name
   Game
     .create({
-      // name: req.body.name,
+      name: name,
       // speed: req.body.speed,
       // logic: req.body.logic,
       // imageID: req.body.imageID,

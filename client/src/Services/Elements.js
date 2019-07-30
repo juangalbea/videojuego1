@@ -8,8 +8,8 @@ export default class ElementServices {
     })
   }
 
-  game = (platforms) => {
-    return this.service.post('/games', {platforms})
+  game = (platforms, name) => {
+    return this.service.post('/games', {platforms, name})
     .then(response => response.data)
   }
 
@@ -29,7 +29,12 @@ export default class ElementServices {
   // .then(response => response.data)
   // }
 
-
+  // handleChangeName = (e) => {
+  //   this.setState({
+  //       ...this.state,
+  //       newName: e.target.value
+  //   })
+  //  }   
 
 
 }
