@@ -12,7 +12,7 @@ class ImageAPI extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=flowers&image_type=photo&&per_page=10      `)
+    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=big+flowers+red&image_type=photo&&per_page=10      `)
       .then(res => res.json())
       .then(
         (result) => {
@@ -42,10 +42,10 @@ class ImageAPI extends Component {
     } else {
       return (
         <ul>
-          {hits.map(item => (
+          {hits.map(item =>  (
             <li key={item.user}>
               {/* {item.user} {item.likes} */}
-              <img src={item.previewURL}></img>
+              <img src={item.previewURL} onClick={()=> this.props.findUrl(item.webformatURL)} ></img>
             </li>
           ))}
         </ul>

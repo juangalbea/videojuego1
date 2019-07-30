@@ -8,8 +8,8 @@ export default class ElementServices {
     })
   }
 
-  game = (platforms, name) => {
-    return this.service.post('/games', {platforms, name})
+  game = (platforms, name, speed, logic, imageID) => {
+    return this.service.post('/games', {platforms, name, speed, logic, imageID})
     .then(response => response.data)
   }
 

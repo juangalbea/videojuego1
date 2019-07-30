@@ -18,7 +18,10 @@ constructor(props) {
                 color: " "
             }
         )),
-        name: ""
+        name: "",
+        speed: "",
+        logic: "",
+        imageID: ""
     }
     this.service = new ElementServices();
 }
@@ -44,7 +47,28 @@ handleChangeName = (e) => {
         ...this.state,
         name: e.target.value
     })
-   }   
+   }
+
+handleChangeSpeed = (e) => {
+    this.setState({
+        ...this.state,
+        speed: e.target.value
+    })
+}
+
+handleChangeLogic = (e) => {
+    this.setState({
+        ...this.state,
+        logic: e.target.value
+    })
+}
+
+handleChangeImageID = (e) => {
+    this.setState({
+        ...this.state,
+        imageID: e.target.value
+    })
+}
 
 handleChange = (e) => {
     const {id, name, value} = e.currentTarget;
@@ -55,9 +79,12 @@ handleChange = (e) => {
 
 handleFormSubmit = (e) => {
     e.preventDefault();
-    const name = this.state.name
+    const name = this.state.name;
+    const speed = this.state.speed;
+    const logic = this.state.logic;
+    const imageID = this.state.imageID;
     const platforms = this.state.platforms;
-    this.service.game(platforms, name)
+    this.service.game(platforms, name, speed, logic, imageID)
     .then((platforms)=> {
         console.log(platforms)
     })
@@ -65,16 +92,22 @@ handleFormSubmit = (e) => {
 
 }
 
+findUrl = (url) => {
+    this.setState({
+        ...this.state,
+        imageID: url
+    })
+}
+
 render() {
-    console.log(this.state.platforms)
     return (
         <React.Fragment>
             <form onSubmit={this.handleFormSubmit}>
             <input type="range" min="4" max="10" defaultValue="4" onChange={this.rangeValue} />
             {
                 this.state.arr.map((e, i) => {
-                    return <div className="platforms"> 
-                      <h4 key={i}>Platform: {i + 1}</h4>
+                    return <div key={i} className="platforms"> 
+                      <h4 >Platform: {i + 1}</h4>
                       <input type="text" id={i} placeholder="X" onChange={this.handleChange} name="x"></input>
                       <input type="text" id={i} placeholder="Y" onChange={this.handleChange} name="y"></input>
                       <input type="text" id={i} placeholder="W" onChange={this.handleChange} name="w"></input>
@@ -83,13 +116,12 @@ render() {
                     </div>
                 })
             }
-            <input type="text" placeholder="Name" onChange={this.handleChangeName} name="gameName"></input>
-            {/* Otras cosas:
-                    <input type="text" placeholder="Name" name="gameName"></input>
-                    <input type="text" placeholder="speed" name="speed"></input>
-                    <input type="text" placeholder="logic" name="logic"></input>
-                    <input type="text" placeholder="imageurl" name="imageurl"></input>
-                    <ImageAPI /> */}
+            Otras cosas:
+                    <input type="text" placeholder="Name" onChange={this.handleChangeName} name="gameName"></input>
+                    <input type="text" placeholder="speed" onChange={this.handleChangeSpeed} name="speed"></input>
+                    <input type="text" placeholder="logic" onChange={this.handleChangeLogic} name="logic"></input>
+                    <input type="text" placeholder="imageurl" onChange={this.handleChangeImageID} name="imageID" value={this.state.imageID}></input>
+                    <ImageAPI  findUrl={this.findUrl} />
                     
                     <input type="submit" value="Submit"/>
             </form>

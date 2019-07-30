@@ -16,9 +16,9 @@ router.post('/games', (req, res) => {
   Game
     .create({
       name: name,
-      // speed: req.body.speed,
-      // logic: req.body.logic,
-      // imageID: req.body.imageID,
+      speed: req.body.speed,
+      logic: req.body.logic,
+      imageID: req.body.imageID,
       platforms:req.body.platforms,
       display: req.body.display
     })
