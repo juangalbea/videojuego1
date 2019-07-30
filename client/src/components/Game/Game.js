@@ -124,7 +124,7 @@ render() {
                     <ImageAPI  findUrl={this.findUrl} />
                     
                     
-                    {/* <input type="submit" value="Submit"/> */}
+                    <input type="submit" value="Submit"/>
             </form>
         </React.Fragment>
     )

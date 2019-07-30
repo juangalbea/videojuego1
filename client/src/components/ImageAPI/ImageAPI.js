@@ -20,7 +20,7 @@ handleChangeImageURL = (e) => {
 }
 
 updateImages(e) {
-   if (e.key == 'Enter') {
+   
     fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${this.state.imageURL}&image_type=photo&&per_page=10      `)
       
       .then(res => res.json())
@@ -49,7 +49,7 @@ updateImages(e) {
         
       )
 
-      }
+      
 }
 
   componentDidMount() {
@@ -85,12 +85,14 @@ updateImages(e) {
     } else {
       return (
         <div>
-           <input type="text" placeholder="imageurl" onChange={this.handleChangeImageURL} onKeyDown={(e) => this.updateImages(e)} name="imageURL" value={this.state.imageURL}></input>
+           <input type="text" placeholder="imageurl" onChange={this.handleChangeImageURL} name="imageURL" value={this.state.imageURL}></input>
+           <button onClick={(e) => this.updateImages(e)}>Search</button>
           <ul>
           {hits.map(item =>  (
             <li key={item.user}>
               {/* {item.user} {item.likes} */}
               <img src={item.previewURL} onClick={()=> this.props.findUrl(item.webformatURL)} ></img>
+              
             </li>
           ))}
         </ul>
