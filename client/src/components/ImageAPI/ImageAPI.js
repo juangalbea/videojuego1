@@ -20,8 +20,8 @@ handleChangeImageURL = (e) => {
 }
 
 updateImages(e) {
-   
-    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${this.state.imageURL}&image_type=photo&&per_page=10      `)
+ 
+    fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${this.state.imageURL}&image_type=photo&&per_page=10`)
       
       .then(res => res.json())
       .then(
@@ -53,7 +53,7 @@ updateImages(e) {
 }
 
   componentDidMount() {
-   fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${this.state.imageURL}&image_type=photo&&per_page=10      `)
+   fetch(`https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${this.state.imageURL}&image_type=photo&&per_page=10`)
       
       .then(res => res.json())
       .then(
