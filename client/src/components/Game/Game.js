@@ -120,10 +120,11 @@ render() {
                     <input type="text" placeholder="Name" onChange={this.handleChangeName} name="gameName"></input>
                     <input type="text" placeholder="speed" onChange={this.handleChangeSpeed} name="speed"></input>
                     <input type="text" placeholder="logic" onChange={this.handleChangeLogic} name="logic"></input>
-                    <input type="text" placeholder="imageurl" onChange={this.handleChangeImageID} name="imageID" value={this.state.imageID}></input>
+                    <input type="text" placeholder="imageID" onChange={this.handleChangeImageID} name="imageID" value={this.state.imageID}></input>
                     <ImageAPI  findUrl={this.findUrl} />
                     
-                    <input type="submit" value="Submit"/>
+                    
+                    {/* <input type="submit" value="Submit"/> */}
             </form>
         </React.Fragment>
     )
