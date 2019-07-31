@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class ElementServices {
   constructor(){
     this.service = axios.create({
-      baseURL: process.env.REACT_APP_URL_ELEMENTS, //'http://localhost:5000/elements',
+      baseURL: process.env.REACT_APP_URL, //'http://localhost:5000/elements',
       withCredentials: true
     })
   }

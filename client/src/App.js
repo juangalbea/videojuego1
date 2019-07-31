@@ -8,6 +8,8 @@ import Profile from './components/Profile';
 import AuthServices from './Services/Services'
 import ImageAPI from './components/ImageAPI/ImageAPI'
 import Game from './components/Game/Game'
+// import Comment from './components/Comment/Comment'
+import "bulma/css/bulma.css";
 
 class App extends Component {
 
@@ -67,6 +69,7 @@ class App extends Component {
             <Route exact path='/images' render={()=><ImageAPI   />}/>
             <Route exact path='/login' render={()=>{return <Redirect to="/profile" />}}/>
             <Route exact path='/profile' render={()=><Profile {...this.state.loggedInUser} logout={this.logout}/>}/>
+            {/* <Route exact path='/comment' render={()=><Comment   />}/> */}
           </Switch>
         </React.Fragment>
       );

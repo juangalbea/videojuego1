@@ -3,7 +3,7 @@ import axios from 'axios';
 export default class AuthServices {
   constructor(){
     this.service = axios.create({
-      baseURL: process.env.REACT_APP_URL_AUTH,  //'http://localhost:5000/auth'
+      baseURL: process.env.REACT_APP_URL,  //'http://localhost:5000/auth'
       withCredentials: true
     })
   }
@@ -16,7 +16,6 @@ export default class AuthServices {
   login = (username, password)=>{
     return this.service.post('/login', {username, password})
     .then(response => response.data)
-
   }
 
   loggedin = ()=>{
