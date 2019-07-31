@@ -8,9 +8,9 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 
-router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
-});
+// router.get("/login", (req, res, next) => {
+//   res.render("auth/login", { "message": req.flash("error") });
+// });
 
 router.get("/userData", (req,res)=>{ 
   let user = req.user
@@ -31,9 +31,9 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
+// router.get("/signup", (req, res, next) => {
+//   res.render("auth/signup");
+// });
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
