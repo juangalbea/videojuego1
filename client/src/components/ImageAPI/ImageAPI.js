@@ -9,7 +9,8 @@ class ImageAPI extends Component {
       error: null,
       isLoaded: false,
       hits: [],
-      imageURL: ""
+      imageURL: "",
+      isActive: true
     };
   }
 
@@ -25,7 +26,7 @@ class ImageAPI extends Component {
     fetch(
       `https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${
         this.state.imageURL
-      }&image_type=photo&&per_page=20`
+      }&image_type=photo&&per_page=200`
     )
       .then(res => res.json())
       .then(result => {
@@ -55,26 +56,42 @@ class ImageAPI extends Component {
     fetch(
       `https://pixabay.com/api/?key=11997623-103c7c4f1fd04d1a3ab285b96&q=${
         this.state.imageURL
-      }&image_type=photo&&per_page=20`
+      }&image_type=photo&&per_page=200`
     )
       .then(res => res.json())
-      .then(
-        result => {
-          this.setState({
-            isLoaded: true,
-            hits: result.hits
-          });
-        })
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        .catch(error => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
+      .then(result => {
+        this.setState({
+          isLoaded: true,
+          hits: result.hits
         });
+      })
+      // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      .catch(error => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      });
   }
+
+  handleModal = e => {
+    console.log("hola")
+    this.setState({
+      ...this.state,
+      isActive: false
+    })
+  };
+
+  handleModalBack = e => {
+    console.log("holas")
+    this.setState({
+      ...this.state,
+      isActive: true
+    })
+  };
+  
 
   render() {
     console.log(this.state.imageURL);
@@ -86,22 +103,73 @@ class ImageAPI extends Component {
     } else {
       return (
         <div>
-          {/* <div className="modal">
-  <div className="modal-background"></div>
-  <div className="modal-card">
-    <header className="modal-card-head">
-      <p className="modal-card-title">Modal title</p>
-      <button className="delete" aria-label="close"></button>
-    </header>
-    <section className="modal-card-body">
-   hola
-    </section>
-    <footer className="modal-card-foot">
-      <button className="button is-success">Save changes</button>
-      <button className="button">Cancel</button>
-    </footer>
-  </div>
-</div> */}
+          <button className="button" onClick={this.handleModal}>open gallery</button>
+         {this.state.isActive?<div className="modal">
+            <div className="modal-background" />
+            <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title">Modal title</p>
+                <button className="delete" onClick={this.handleModalBack} aria-label="close" />
+              </header>
+              <section className="modal-card-body">
+                <input
+                  type="text"
+                  placeholder="imageurl"
+                  onChange={this.handleChangeImageURL}
+                  name="imageURL"
+                  value={this.state.imageURL}
+                />
+                <button onClick={e => this.updateImages(e)}>Search</button>
+                <ul>
+                  {hits.map((item, i) => (
+                    <li key={i}>
+                      {/* {item.user} {item.likes} */}
+                      <img
+                        src={item.webformatURL}
+                        onClick={() => this.props.findUrl(item.largeImageURL)}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <footer className="modal-card-foot">
+                <button className="button is-success">Save changes</button>
+                <button className="button" onClick={this.handleModalBack}>Cancel</button>
+              </footer>
+            </div>
+          </div>:<div className="modal is-active"><div className="modal-background" />
+            <div className="modal-card">
+              <header className="modal-card-head">
+                <p className="modal-card-title">Modal title</p>
+                <button className="delete"  onClick={this.handleModalBack} aria-label="close" />
+              </header>
+              <section className="modal-card-body">
+                <input
+                  type="text"
+                  placeholder="imageurl"
+                  onChange={this.handleChangeImageURL}
+                  name="imageURL"
+                  value={this.state.imageURL}
+                />
+                <button onClick={e => this.updateImages(e)}>Search</button>
+                <ul>
+                  {hits.map((item, i) => (
+                    <li key={i}>
+                      {/* {item.user} {item.likes} */}
+                      <img
+                        src={item.webformatURL}
+                        onClick={() => this.props.findUrl(item.largeImageURL)}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <footer className="modal-card-foot">
+                <button className="button is-success">Save changes</button>
+                <button className="button" onClick={this.handleModalBack}>Cancel</button>
+              </footer>
+            </div>
+          </div>}
 
           {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
@@ -135,17 +203,6 @@ class ImageAPI extends Component {
             value={this.state.imageURL}
           />
           <button onClick={e => this.updateImages(e)}>Search</button>
-          <ul>
-            {hits.map((item, i) => (
-              <li key={i}>
-                {/* {item.user} {item.likes} */}
-                <img
-                  src={item.previewURL}
-                  onClick={() => this.props.findUrl(item.webformatURL)}
-                />
-              </li>
-            ))}
-          </ul>
         </div>
       );
     }

@@ -3,10 +3,12 @@ const router  = express.Router();
 const Comment = require("../models/Comment");
 const Game = require("../models/Game");
 
-router.get('/games', (req, res, next) => {
+
+
+router.get('/getgames', (req, res, next) => {
   Game
-    .find()
-    .sort({timestamp: -1})
+    .find({})
+    
     .then(allGames => res.json(allGames))
     .catch(e => console.log(e))
 });

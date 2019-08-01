@@ -10,7 +10,155 @@ const games = [
     name: "The Hunger Games",
     Speed: 27,
     Logic: 3,
-    imageID: "iojfoifdkmsdkmfsdkomosmovmkvfdo",
+    imageID: "https://pixabay.com/get/55e6d5424b5ba814f6da8c7dda79367f1c36d9e351526c4870297fd19e4dc25db8_1280.jpg",
+    platforms: [
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      }
+    ],
+    timestamp: Date()
+  },
+  {
+    name: "HAHAHAHAHAHA",
+    Speed: 27,
+    Logic: 3,
+    imageID: "https://pixabay.com/get/55e1d0454e56ac14f6da8c7dda79367f1c36d9e351526c4870297fd19e4dc25db8_1280.jpg",
+    platforms: [
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      }
+    ],
+    timestamp: Date()
+  },
+  {
+    name: "Jesús y Carleto",
+    Speed: 27,
+    Logic: 3,
+    imageID: "https://pixabay.com/get/53e3d3404d54b108f5d08460962936771c38d8e7504c704c732b7dd49249c45a_1280.jpg",
+    platforms: [
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      }
+    ],
+    timestamp: Date()
+  },
+  {
+    name: "Siiiitooo",
+    Speed: 27,
+    Logic: 3,
+    imageID: "https://pixabay.com/get/55e0dc464951a814f6da8c7dda79367f1c36d9e351526c4870297fd29748c159ba_1280.jpg",
+    platforms: [
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      }
+    ],
+    timestamp: Date()
+  },
+  {
+    name: "Datos para ti",
+    Speed: 27,
+    Logic: 3,
+    imageID: "https://pixabay.com/get/57e2dc4b4a53aa14f6da8c7dda79367f1c36d9e351526c4870297fd29748c05ab1_1280.jpg",
     platforms: [
       {
         x: 67,

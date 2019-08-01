@@ -8,6 +8,12 @@ export default class ElementServices {
     })
   }
 
+  getgame = () => {
+    console.log("Entro")
+    return this.service.get('/getgames')
+    .then(response => response.data)
+  }
+
   game = (platforms, name, speed, logic, imageID) => {
     return this.service.post('/games', {platforms, name, speed, logic, imageID})
     .then(response => response.data)

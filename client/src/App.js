@@ -10,7 +10,8 @@ import ImageAPI from './components/ImageAPI/ImageAPI'
 import Game from './components/Game/Game'
 // import Comment from './components/Comment/Comment'
 import "bulma/css/bulma.css";
-
+import VideoGame from './components/VideoGame/VideoGame'
+import Home from './components/Home/Home'
 class App extends Component {
 
   constructor(props){
@@ -65,7 +66,9 @@ class App extends Component {
       return (
         <React.Fragment>
           <Switch>
-          <Route exact path='/game' render={()=><Game   />}/>
+            <Route exact path='/home' render={()=><Home  />}/>
+            <Route exact path='/game' render={()=><Game   />}/>
+            <Route exact path='/videogame' render={()=><VideoGame   />}/>
             <Route exact path='/images' render={()=><ImageAPI   />}/>
             <Route exact path='/login' render={()=>{return <Redirect to="/profile" />}}/>
             <Route exact path='/profile' render={()=><Profile {...this.state.loggedInUser} logout={this.logout}/>}/>

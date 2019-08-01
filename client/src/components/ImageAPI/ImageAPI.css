@@ -1,8 +1,21 @@
 ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  
 }
 
 li {
   list-style-type: none;
+  
 }
+
+li img {
+  height: 120px;
+  margin: 4px;
+}
+
+
+
+/* 
+ */
