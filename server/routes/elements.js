@@ -9,9 +9,27 @@ router.get('/getgames', (req, res, next) => {
   Game
     .find({})
     
-    .then(allGames => res.json(allGames))
+    .then(allGames => {
+
+      let random = Math.floor(Math.random()*allGames.length)
+
+      res.json(allGames[random])
+    })
     .catch(e => console.log(e))
 });
+
+router.get('/getgamesF', (req, res, next) => {
+  Game
+    .find({})
+    
+    .then(allGames => {
+
+
+      res.json(allGames)
+    })
+    .catch(e => console.log(e))
+});
+
 
 router.post('/games', (req, res) => {
   const name = req.body.name

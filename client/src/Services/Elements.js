@@ -10,7 +10,7 @@ export default class ElementServices {
 
   getgame = () => {
     console.log("Entro")
-    return this.service.get('/getgames')
+    return this.service.get('/getgamesF')
     .then(response => response.data)
   }
 

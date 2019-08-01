@@ -158,7 +158,7 @@ const games = [
     name: "Datos para ti",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/57e9d2414e57ac14f6da8c7dda79367f1c36d9e351526c4870297fd3974dc75ab0_1280.jpg",
+    imageID: "https://pixabay.com/get/55e4d6474255b108f5d08460962936771c38d8e7504c704c732b7cd4974fc750_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -192,7 +192,7 @@ const games = [
     timestamp: Date()
   },
   {
-    name: "Datos para ti",
+    name: "jaska",
     Speed: 27,
     Logic: 3,
     imageID: "https://pixabay.com/get/57e6d1414e57a914f6da8c7dda79367f1c36d9e351526c4870297fd3974cc759b1_1280.jpg",
