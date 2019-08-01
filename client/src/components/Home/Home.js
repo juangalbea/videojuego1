@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Elements from '../../Services/Elements'
 import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import './Home.css';
 
 export default class Home extends Component {
   constructor(props) {
@@ -30,7 +29,7 @@ export default class Home extends Component {
   render() {
     console.log(this.state.allGames)
     return (
-        <Carousel>
+ <div className="gameList">
 
 {
 (this.state.allGames)
@@ -46,19 +45,7 @@ export default class Home extends Component {
 : <h3>Loading...</h3>
 }
 
-                {/* <div>
-                    <img src="https://pixabay.com/get/55e6d5424b5ba814f6da8c7dda79367f1c36d9e351526c4870297fd19e4dc25db8_1280.jpg" />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="https://pixabay.com/get/55e1d0454e56ac14f6da8c7dda79367f1c36d9e351526c4870297fd19e4dc25db8_1280.jpg" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="https://pixabay.com/get/53e3d3404d54b108f5d08460962936771c38d8e7504c704c732b7dd49249c45a_1280.jpg" />
-                    <p className="legend">Legend 3</p>
-                </div> */}
-            </Carousel>
+</div>
     )
   }
 }
