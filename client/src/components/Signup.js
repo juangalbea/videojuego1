@@ -35,7 +35,7 @@ handleChange = (event) => {
 
 render(){
   return(
-    <div>
+    <div className="loginBox">
       <form onSubmit={this.handleFormSubmit}>
         <label>Username:</label>
         <input type="text" name="username" value={this.state.username} onChange={ e => this.handleChange(e)}/>

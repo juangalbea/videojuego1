@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+
 
 export default class Profile extends Component {
   render() {
     return (
-      <div>
-        <h1>{this.props.username} DONDE VAMOS HOY??</h1>
+<React.Fragment>
+      <div className="pantallaInicio">
+      <Link to={`/home`}>Home</Link>
+      <Link to={`/game`}>Game</Link>
         <button onClick={(e)=>{this.props.logout(e)}}>LOGOUT</button>
       </div>
+      </React.Fragment>
     )
   }
 }

@@ -77,6 +77,7 @@ class ImageAPI extends Component {
   }
 
   handleModal = e => {
+    e.preventDefault()
     console.log("hola")
     this.setState({
       ...this.state,
@@ -85,6 +86,7 @@ class ImageAPI extends Component {
   };
 
   handleModalBack = e => {
+    e.preventDefault()
     console.log("holas")
     this.setState({
       ...this.state,
