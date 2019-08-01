@@ -10,7 +10,7 @@ const games = [
     name: "The Hunger Games",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/55e6d5424b5ba814f6da8c7dda79367f1c36d9e351526c4870297fd19e4dc25db8_1280.jpg",
+    imageID: "https://pixabay.com/get/57e4dd404f50a814f6da8c7dda79367f1c36d9e351526c4870297fd29e44cc58ba_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -84,7 +84,7 @@ const games = [
     name: "Jesús y Carleto",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/53e3d3404d54b108f5d08460962936771c38d8e7504c704c732b7dd49249c45a_1280.jpg",
+    imageID: "https://pixabay.com/get/57e8d5444e55aa14f6da8c7dda79367f1c36d9e351526c4870297fd29f49c15cbd_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -121,7 +121,7 @@ const games = [
     name: "Siiiitooo",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/55e0dc464951a814f6da8c7dda79367f1c36d9e351526c4870297fd29748c159ba_1280.jpg",
+    imageID: "https://pixabay.com/get/54e1d345424fad0bffd8992cc6293e771239dce64e50744f71287bd49149cc_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -158,7 +158,44 @@ const games = [
     name: "Datos para ti",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/57e2dc4b4a53aa14f6da8c7dda79367f1c36d9e351526c4870297fd29748c05ab1_1280.jpg",
+    imageID: "https://pixabay.com/get/57e9d2414e57ac14f6da8c7dda79367f1c36d9e351526c4870297fd3974dc75ab0_1280.jpg",
+    platforms: [
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      },
+      {
+        x: 67,
+        y: 57,
+        w: 34,
+        h: 45,
+        color: "#fabada"
+      }
+    ],
+    timestamp: Date()
+  },
+  {
+    name: "Datos para ti",
+    Speed: 27,
+    Logic: 3,
+    imageID: "https://pixabay.com/get/57e6d1414e57a914f6da8c7dda79367f1c36d9e351526c4870297fd3974cc759b1_1280.jpg",
     platforms: [
       {
         x: 67,
