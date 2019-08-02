@@ -110,7 +110,7 @@ class ImageAPI extends Component {
             <div className="modal-background" />
             <div className="modal-card">
               <header className="modal-card-head">
-                <p className="modal-card-title">Modal title</p>
+                <p className="modal-card-title">Search image</p>
                 <button className="delete" onClick={this.handleModalBack} aria-label="close" />
               </header>
               <section className="modal-card-body">
@@ -135,14 +135,13 @@ class ImageAPI extends Component {
                 </ul>
               </section>
               <footer className="modal-card-foot">
-                <button className="button is-success">Save changes</button>
-                <button className="button" onClick={this.handleModalBack}>Cancel</button>
+                <button className="button" onClick={this.handleModalBack}>Close</button>
               </footer>
             </div>
           </div>:<div className="modal is-active"><div className="modal-background" />
             <div className="modal-card">
               <header className="modal-card-head">
-                <p className="modal-card-title">Modal title</p>
+                <p className="modal-card-title">Search image</p>
                 <button className="delete"  onClick={this.handleModalBack} aria-label="close" />
               </header>
               <section className="modal-card-body">
@@ -167,44 +166,10 @@ class ImageAPI extends Component {
                 </ul>
               </section>
               <footer className="modal-card-foot">
-                <button className="button is-success">Save changes</button>
-                <button className="button" onClick={this.handleModalBack}>Cancel</button>
+                <button className="button" onClick={this.handleModalBack}>Close</button>
               </footer>
             </div>
           </div>}
-
-          {/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div className="modal-dialog modal-dialog-centered" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div className="modal-body">
-        ...
-      </div>
-      <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> */}
-
-          <input
-            type="text"
-            placeholder="imageurl"
-            onChange={this.handleChangeImageURL}
-            name="imageURL"
-            value={this.state.imageURL}
-          />
-          <button onClick={e => this.updateImages(e)}>Search</button>
         </div>
       );
     }
