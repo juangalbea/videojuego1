@@ -84,7 +84,7 @@ const games = [
     name: "Jesús y Carleto",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/57e8d5444e55aa14f6da8c7dda79367f1c36d9e351526c4870297fd29f49c15cbd_1280.jpg",
+    imageID: "https://pixabay.com/get/54e6d04a4a50af14f6da8c7dda79367f1c36d9e351526c4870297fd3974ec55bbb_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -121,7 +121,7 @@ const games = [
     name: "Siiiitooo",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/54e1d345424fad0bffd8992cc6293e771239dce64e50744f71287bd49149cc_1280.jpg",
+    imageID: "https://pixabay.com/get/5ee3dc414a5ab108f5d08460962936771c38d8e7504c704c732b7cd4934cc259_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -158,7 +158,7 @@ const games = [
     name: "Datos para ti",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/55e4d6474255b108f5d08460962936771c38d8e7504c704c732b7cd4974fc750_1280.jpg",
+    imageID: "https://pixabay.com/get/57e1d74b4253a914f6da8c7dda79367f1c36d9e351526c4870297fd3974ec05cbf_1280.jpg",
     platforms: [
       {
         x: 67,
@@ -195,7 +195,7 @@ const games = [
     name: "jaska",
     Speed: 27,
     Logic: 3,
-    imageID: "https://pixabay.com/get/57e6d1414e57a914f6da8c7dda79367f1c36d9e351526c4870297fd3974cc759b1_1280.jpg",
+    imageID: "https://pixabay.com/get/55e0d74a4c54a914f6da8c7dda79367f1c36d9e351526c4870297fd3974ec05cbf_1280.jpg",
     platforms: [
       {
         x: 67,
